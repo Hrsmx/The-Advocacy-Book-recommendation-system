@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T H E  A D V O C A C Y</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+        .navbar-brand{
+            color: white;
+            font-size: 50px;
+            font-weight: normal;
+        }
+        .navbar-nav{
+            color: white;
+
+        }
+        .card-body{
+            border-style: solid;
+            shape-image-threshold:
+
+
+
+
+        }
+        .card{
+            shape-image-threshold: inherit;
+        }
+        .text-black{
+            text-align: center;
+        }
+
+
+
+    </style>
+<body>
+
+    <nav class="navbar" style="background: #9796f0;
+            background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #fbc7d4, #9796f0);">
+        <a class="navbar-brand">T H E &nbsp A D V O C A C Y</a>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-black">Top 50 Books</h1>
+            </div>
+
+            {% for i in range(book_name|length) %}
+                <div class="col-md-3" style="margin-top:50px">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{ image[i] }}">
+                            <h5 class="text-black" style="text-align: center">{{ book_name[i] }}</h5>
+                            <h6 class="text-white">{{ author[i] }}</h6>
+                            <h6 class="text-white">Votes - {{ votes[i] }}</h6>
+                            <h6 class="text-white">Rating - {{ rating[i] }}</h6>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+</body>
+</html>
